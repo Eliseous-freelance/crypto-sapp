@@ -1,0 +1,12 @@
+{
+  "data" : [
+    {
+      "filename" : "crypto_sappUITestsLaunchTests.swift",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

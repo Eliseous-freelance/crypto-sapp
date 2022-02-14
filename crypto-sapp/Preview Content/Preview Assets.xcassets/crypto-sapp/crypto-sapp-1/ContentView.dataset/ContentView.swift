@@ -67,6 +67,7 @@ struct ContentView: View {
                 .tabItem {
                     Image(systemName: "person.crop.circle")
                     Text("Wallet")
+                   
                 }
         }
     }
