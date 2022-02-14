@@ -42,7 +42,6 @@ struct ContentView: View {
                 .font(.system(size: 30, weight: .bold, design: .rounded))
                 PieSliceView(pieSliceData: PieSliceData(startAngle: Angle(degrees: endDeg), endAngle: Angle(degrees: endDeg + degrees), color: Color.blue))
                 }
-            
                 .tabItem {
                     Image(systemName: "video.circle.fill")
                     Text("Mining")

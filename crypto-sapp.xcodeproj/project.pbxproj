@@ -21,6 +21,7 @@
 		46B9864727BAD88600A0AD50 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46B9864227BAD87D00A0AD50 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		46B9864A27BAE04200A0AD50 /* Investing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B9864927BAE04200A0AD50 /* Investing.swift */; };
 		46B9864C27BAE44A00A0AD50 /* PieSliceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B9864B27BAE44A00A0AD50 /* PieSliceView.swift */; };
+		46EF713A27BB040B00F57CD9 /* Main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EF713927BB040B00F57CD9 /* Main.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,6 +86,7 @@
 		46B9863C27BAD87C00A0AD50 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../../../../Downloads/Charts-master-2/Charts.xcodeproj"; sourceTree = "<group>"; };
 		46B9864927BAE04200A0AD50 /* Investing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Investing.swift; sourceTree = "<group>"; };
 		46B9864B27BAE44A00A0AD50 /* PieSliceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PieSliceView.swift; sourceTree = "<group>"; };
+		46EF713927BB040B00F57CD9 /* Main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Main.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			isa = PBXGroup;
 			children = (
 				46B9860C27BAD7B500A0AD50 /* crypto_sappApp.swift */,
+				46EF713927BB040B00F57CD9 /* Main.swift */,
 				46B9863827BAD7FA00A0AD50 /* Wallet.swift */,
 				46B9863A27BAD80F00A0AD50 /* WalletBarChartView.swift */,
 				46B9860E27BAD7B500A0AD50 /* ContentView.swift */,
@@ -348,6 +351,7 @@
 			files = (
 				46B9863927BAD7FA00A0AD50 /* Wallet.swift in Sources */,
 				46B9863B27BAD80F00A0AD50 /* WalletBarChartView.swift in Sources */,
+				46EF713A27BB040B00F57CD9 /* Main.swift in Sources */,
 				46B9860F27BAD7B500A0AD50 /* ContentView.swift in Sources */,
 				46B9860D27BAD7B500A0AD50 /* crypto_sappApp.swift in Sources */,
 				46B9864C27BAE44A00A0AD50 /* PieSliceView.swift in Sources */,
