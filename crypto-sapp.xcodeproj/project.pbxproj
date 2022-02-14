@@ -14,6 +14,11 @@
 		46B9861E27BAD7B600A0AD50 /* crypto_sappTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B9861D27BAD7B600A0AD50 /* crypto_sappTests.swift */; };
 		46B9862827BAD7B600A0AD50 /* crypto_sappUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B9862727BAD7B600A0AD50 /* crypto_sappUITests.swift */; };
 		46B9862A27BAD7B600A0AD50 /* crypto_sappUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B9862927BAD7B600A0AD50 /* crypto_sappUITestsLaunchTests.swift */; };
+		46B9863727BAD7D100A0AD50 /* Mining.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B9863627BAD7D100A0AD50 /* Mining.swift */; };
+		46B9863927BAD7FA00A0AD50 /* Wallet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B9863827BAD7FA00A0AD50 /* Wallet.swift */; };
+		46B9863B27BAD80F00A0AD50 /* WalletBarChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B9863A27BAD80F00A0AD50 /* WalletBarChartView.swift */; };
+		46B9864627BAD88600A0AD50 /* Charts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 46B9864227BAD87D00A0AD50 /* Charts.framework */; platformFilter = ios; };
+		46B9864727BAD88600A0AD50 /* Charts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 46B9864227BAD87D00A0AD50 /* Charts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +36,35 @@
 			remoteGlobalIDString = 46B9860827BAD7B500A0AD50;
 			remoteInfo = "crypto-sapp";
 		};
+		46B9864127BAD87D00A0AD50 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46B9863C27BAD87C00A0AD50 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65AD9E95D9ED4DC0BD73A743;
+			remoteInfo = Charts;
+		};
+		46B9864327BAD87D00A0AD50 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46B9863C27BAD87C00A0AD50 /* Charts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
+			remoteInfo = ChartsTests;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		46B9864827BAD88700A0AD50 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				46B9864727BAD88600A0AD50 /* Charts.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		46B9860927BAD7B500A0AD50 /* crypto-sapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "crypto-sapp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +77,10 @@
 		46B9862327BAD7B600A0AD50 /* crypto-sappUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "crypto-sappUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		46B9862727BAD7B600A0AD50 /* crypto_sappUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crypto_sappUITests.swift; sourceTree = "<group>"; };
 		46B9862927BAD7B600A0AD50 /* crypto_sappUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = crypto_sappUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		46B9863627BAD7D100A0AD50 /* Mining.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mining.swift; sourceTree = "<group>"; };
+		46B9863827BAD7FA00A0AD50 /* Wallet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wallet.swift; sourceTree = "<group>"; };
+		46B9863A27BAD80F00A0AD50 /* WalletBarChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletBarChartView.swift; sourceTree = "<group>"; };
+		46B9863C27BAD87C00A0AD50 /* Charts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Charts.xcodeproj; path = "../../../../../../Downloads/Charts-master-2/Charts.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46B9864627BAD88600A0AD50 /* Charts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,10 +112,13 @@
 		46B9860027BAD7B500A0AD50 = {
 			isa = PBXGroup;
 			children = (
+				46B9863827BAD7FA00A0AD50 /* Wallet.swift */,
+				46B9863A27BAD80F00A0AD50 /* WalletBarChartView.swift */,
 				46B9860B27BAD7B500A0AD50 /* crypto-sapp */,
 				46B9861C27BAD7B600A0AD50 /* crypto-sappTests */,
 				46B9862627BAD7B600A0AD50 /* crypto-sappUITests */,
 				46B9860A27BAD7B500A0AD50 /* Products */,
+				46B9864527BAD88600A0AD50 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +137,8 @@
 			children = (
 				46B9860C27BAD7B500A0AD50 /* crypto_sappApp.swift */,
 				46B9860E27BAD7B500A0AD50 /* ContentView.swift */,
+				46B9863627BAD7D100A0AD50 /* Mining.swift */,
+				46B9863C27BAD87C00A0AD50 /* Charts.xcodeproj */,
 				46B9861027BAD7B600A0AD50 /* Assets.xcassets */,
 				46B9861227BAD7B600A0AD50 /* Preview Content */,
 			);
@@ -127,6 +170,22 @@
 			path = "crypto-sappUITests";
 			sourceTree = "<group>";
 		};
+		46B9863D27BAD87C00A0AD50 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				46B9864227BAD87D00A0AD50 /* Charts.framework */,
+				46B9864427BAD87D00A0AD50 /* ChartsTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		46B9864527BAD88600A0AD50 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,6 +196,7 @@
 				46B9860527BAD7B500A0AD50 /* Sources */,
 				46B9860627BAD7B500A0AD50 /* Frameworks */,
 				46B9860727BAD7B500A0AD50 /* Resources */,
+				46B9864827BAD88700A0AD50 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -217,6 +277,12 @@
 			mainGroup = 46B9860027BAD7B500A0AD50;
 			productRefGroup = 46B9860A27BAD7B500A0AD50 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 46B9863D27BAD87C00A0AD50 /* Products */;
+					ProjectRef = 46B9863C27BAD87C00A0AD50 /* Charts.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				46B9860827BAD7B500A0AD50 /* crypto-sapp */,
@@ -225,6 +291,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		46B9864227BAD87D00A0AD50 /* Charts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Charts.framework;
+			remoteRef = 46B9864127BAD87D00A0AD50 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		46B9864427BAD87D00A0AD50 /* ChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ChartsTests.xctest;
+			remoteRef = 46B9864327BAD87D00A0AD50 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		46B9860727BAD7B500A0AD50 /* Resources */ = {
@@ -257,8 +340,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46B9863927BAD7FA00A0AD50 /* Wallet.swift in Sources */,
+				46B9863B27BAD80F00A0AD50 /* WalletBarChartView.swift in Sources */,
 				46B9860F27BAD7B500A0AD50 /* ContentView.swift in Sources */,
 				46B9860D27BAD7B500A0AD50 /* crypto_sappApp.swift in Sources */,
+				46B9863727BAD7D100A0AD50 /* Mining.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

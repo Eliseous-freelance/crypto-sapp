@@ -1,18 +1,56 @@
 //
 //  ContentView.swift
-//  crypto-sapp
+//  Shared
 //
-//  Created by Eliseo Dalle Crode on 14/02/2022.
+//  Created by Eliseo Dalle Crode on 13/02/2022.
 //
 
 import SwiftUI
+import Charts
+
+let wallet = Wallet(totalBalance: 50, balance: 0, name: "MainNet")
 
 struct ContentView: View {
+    @State private var selectedBalance : Int = 50
+    @State private var barEntries: [BarChartDataEntry] = []
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        TabView {
+            Text("Home Tab")
+                .font(.system(size: 30, weight: .bold, design: .rounded))
+                .tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Home")
+                }
+            Text("Mining")
+                .font(.system(size: 30, weight: .bold, design: .rounded))
+                .tabItem {
+                    Image(systemName: "video.circle.fill")
+                    Text("Mining")
+                }
+            Text("Investing")
+                .font(.system(size: 30, weight: .bold, design:
+                    .rounded))
+                .tabItem {
+                    Image(systemName: "house.fill")
+                    Text("Investing")
+                }
+            VStack{
+                Text("Total Balance: £\(wallet.totalBalance) \n\(wallet.name) has: £\(wallet.balance) ")
+                    .font(.system(size: 30, weight: .bold, design:
+                                        .rounded))
+                WalletBarChartView(entries: Wallet.dataEntriesForWallet(totalBalance: 50, balance: 0, wallets: Wallet.allWallets), selectedWallet: $selectedBalance)
+                    .frame(height: 100)
+                }
+                .tabItem {
+                    Image(systemName: "person.crop.circle")
+                    Text("Wallet")
+                   
+                }
+        }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
