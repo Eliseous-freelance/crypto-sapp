@@ -29,8 +29,6 @@ struct ContentView: View {
             Text("Hello, Eliseo...")
                     .font(.system(size: 30, weight: .bold, design: .rounded))
                 Text("\nHere is summary of money owned: \(moneyOwned)\nmoney mined: \(moneyMined) \nmoney invested: \(moneyInvested)")
-                WalletBarChartView(entries: Wallet.dataEntriesForWallet(totalBalance: 50, balance: 0, wallets: Wallet.allWallets), selectedWallet: $selectedBalance)
-                    .frame(height: 100)
                 }
             
                 .tabItem {
