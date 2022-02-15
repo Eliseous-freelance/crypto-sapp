@@ -46,9 +46,12 @@ struct ContentView: View {
                     Image(systemName: "video.circle.fill")
                     Text("Mining")
                 }
+            VStack{
             Text("Investing")
                 .font(.system(size: 30, weight: .bold, design:
                     .rounded))
+                PieSliceView(pieSliceData: PieSliceData(startAngle: Angle(degrees: endDeg), endAngle: Angle(degrees: endDeg + degrees), color: Color.red))
+            }
                 .tabItem {
                     Image(systemName: "house.fill")
                     Text("Investing")
@@ -69,7 +72,6 @@ struct ContentView: View {
                 }
         }
     }
-
 }
 
 struct ContentView_Previews: PreviewProvider {
