@@ -7,36 +7,30 @@
 
 
 class Investments{
-    private var _totalInvested: Double!
-    var totalInvested: Double{
-        return _totalInvested =
-    }
+    private var totalInvested: Double
     private var totalReturn: Double
-    private var _coins: [Coin]
-    var coins: [Coin]{
-        return _coins
-    }
+    private var coins: [Coin]
+    
     private var initialInvestment: Double
     
     /*
      constructor
      */
     init(coins: [Coin], initialInvestment: Double){
-        self._coins = coins
-        self._totalInvested = self.get_total_Invested(coins: self._coins)
+        self.coins = coins
+        self.totalInvested = 0
         self.initialInvestment = initialInvestment
-        self.totalReturn = self._totalInvested - initialInvestment
+        self.totalReturn = self.totalInvested - initialInvestment
+    }
+    
+    func setTotalInvested(){
+        self.totalInvested = get_total_Invested(coins: self.coins)
     }
     
     func get_total_Invested(coins: [Coin]) -> Double{
         for i in coins{
-            self._totalInvested += i.coin_value
+            self.totalInvested += i.coin_value
         }
         return totalInvested
     }
-    
-    
-    
-    
-    
 }

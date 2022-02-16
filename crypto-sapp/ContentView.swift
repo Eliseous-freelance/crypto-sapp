@@ -8,27 +8,37 @@
 import SwiftUI
 import Charts
 
-let wallet = Wallet(totalBalance: 50, balance: 0, name: "MainNet")
-let moneyOwned = 10
-let moneyMined = 10
-let moneyInvested = 10
+//let wallet = Wallet(totalBalance: 50, balance: 0, name: "MainNet")
 let values: [Double] = [10, 45]
-var colors: [Color] = [Color.red, Color.blue]
-let degrees: Double = Double(value * 360) / sum
 let sum = values.reduce(0, +)
-var endDeg: Double = 0
-let value = 10
+let degrees: Double = Double(10 * 360) / sum
 
 struct ContentView: View {
     @State private var selectedBalance : Int = 50
     @State private var barEntries: [BarChartDataEntry] = []
+   // @State private var main: Main = Main()
+    @State private var homepage: HomePage = Main().homepage
+    @State private var wallets: [Wallet] = Main().allWallets
+    
+    func get_wallets_descrp() -> String{
+        var w_string: String = ""
+        for wallet in wallets{
+            w_string += " \n\(wallet.name) has: £\(wallet.balance)\n "
+        }
+        return w_string
+    }
     
     var body: some View {
         TabView {
+            
             VStack{
-            Text("Hello, Eliseo...")
+            Text(Date(), style: .date)
+            Text("\nHello, Eliseo... \n")
                     .font(.system(size: 30, weight: .bold, design: .rounded))
-                Text("\nHere is summary of money owned: \(moneyOwned)\nmoney mined: \(moneyMined) \nmoney invested: \(moneyInvested)")
+                
+                Text(homepage.get_total_money_owned())
+                    .font(.system(size: 20, weight: .bold, design: .rounded))
+                Text(homepage.get_summary())
                 }
             
                 .tabItem {
@@ -38,7 +48,7 @@ struct ContentView: View {
             VStack{
             Text("Mining")
                 .font(.system(size: 30, weight: .bold, design: .rounded))
-                PieSliceView(pieSliceData: PieSliceData(startAngle: Angle(degrees: endDeg), endAngle: Angle(degrees: endDeg + degrees), color: Color.blue))
+                PieSliceView(pieSliceData: PieSliceData(startAngle: Angle(degrees: 0), endAngle: Angle(degrees: 0 + degrees), color: Color.blue))
                 }
                 .tabItem {
                     Image(systemName: "video.circle.fill")
@@ -48,19 +58,21 @@ struct ContentView: View {
             Text("Investing")
                 .font(.system(size: 30, weight: .bold, design:
                     .rounded))
-                PieSliceView(pieSliceData: PieSliceData(startAngle: Angle(degrees: endDeg), endAngle: Angle(degrees: endDeg + degrees), color: Color.red))
+                PieSliceView(pieSliceData: PieSliceData(startAngle: Angle(degrees: 0), endAngle: Angle(degrees: 0 + degrees), color: Color.red))
             }
                 .tabItem {
                     Image(systemName: "house.fill")
                     Text("Investing")
                 }
             VStack{
-                Text("Total Balance: £\(wallet.totalBalance) ")
+                Text("Total Balance: £\(Main().moneyOwned) ")
                     .font(.system(size: 30, weight: .bold, design:
                                         .rounded))
-                Text("\(wallet.name) has: £\(wallet.balance)")
-                Text("\(wallet.name) has: £\(wallet.balance)")
-                Text("\(wallet.name) has: £\(wallet.balance)")
+                
+                Text(get_wallets_descrp())
+                
+//                Text("\(wallet.name) has: £\(wallet.balance)")
+//                Text("\(wallet.name) has: £\(wallet.balance)")
                 WalletBarChartView(entries: Wallet.dataEntriesForWallet(totalBalance: 50, balance: 0, wallets: Wallet.allWallets), selectedWallet: $selectedBalance)
                     .frame(height: 100)
                 }
@@ -71,6 +83,7 @@ struct ContentView: View {
         }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

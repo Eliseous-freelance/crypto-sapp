@@ -7,12 +7,13 @@
 
 import UIKit
 class Data{
-    private var url: URL?
+    private var url: String
     
-    init(url: URL){
+    init(url: String){
         // Prepare URL
         self.url = url
-        guard let requestUrl = self.url else {
+        
+        guard let requestUrl = URL(string: self.url) else {
             fatalError()
         }
 
