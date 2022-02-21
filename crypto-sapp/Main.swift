@@ -7,7 +7,7 @@
 
 import SwiftUI
 class Main{
-    public var moneyOwned: Int
+    public var moneyOwned: Double
     private var moneyMined: Int
     private var moneyInvested: Int
     
@@ -29,11 +29,11 @@ class Main{
     private var allInvestments:[Investments]
     
     init(){
-        self.moneyOwned = 10
+        self.moneyOwned = 0
         self.moneyMined = 10
         self.moneyInvested = 10
         
-        self.data = Data(url: "https://jsonplaceholder.typicode.com/todos")
+        self.data = Data(url: "crypto-sapp.eliseous-730r0zs00.hostgrid.live")
         
         self.allInvestments = [Investments(coins: allCoins, initialInvestment: 50), Investments(coins: allCoins, initialInvestment: 50), Investments(coins: allCoins, initialInvestment: 50)]
         
@@ -41,7 +41,16 @@ class Main{
         self.investments = Investments(coins: allCoins, initialInvestment: 700)
         self.homepage = HomePage(moneyOwned: 50, moneyMined: 50, moneyInvested: 50)
         
+        self.moneyOwned = get_total_wallets_balance(allWallets: allWallets)
+        
             //self.homepage_summary = homepage.update_values(moneyOwned: Double, moneyMined: <#T##Double#>, moneyInvested: <#T##Double#>)
+    }
+    
+    func get_total_wallets_balance(allWallets: [Wallet]) -> Double{
+        for wallet in allWallets{
+            self.moneyOwned += wallet.balance
+        }
+        return self.moneyOwned
     }
     
     

@@ -16,6 +16,7 @@ import Charts
 struct WalletBarChartView: UIViewRepresentable{
     let entries: [BarChartDataEntry]
     @Binding var selectedWallet: Int
+    
     func makeUIView(context: Context) -> BarChartView{
         return BarChartView()
     }
@@ -44,22 +45,23 @@ struct WalletBarChartView: UIViewRepresentable{
     }
     
     func formatYAxis(yAxis: YAxis){
-        yAxis.labelTextColor = .red
+        yAxis.labelTextColor = .cyan
         let formatter = NumberFormatter()
         formatter.numberStyle = .none
-        yAxis.valueFormatter = DefaultAxisValueFormatter(formatter: formatter)
+        //yAxis.valueFormatter = DefaultAxisValueFormatter(formatter: formatter)
+        yAxis.valueFormatter = IndexAxisValueFormatter(values: [String(Main().allWallets[0].balance), String(Main().allWallets[1].balance), String(Main().allWallets[2].balance)])
         yAxis.axisMinimum = 0
     }
     
     func formatXAxis(xAxis: XAxis){
-        xAxis.valueFormatter = IndexAxisValueFormatter(values: Wallet.months)
+        xAxis.valueFormatter = IndexAxisValueFormatter(values: [Main().allWallets[0].name, Main().allWallets[1].name, Main().allWallets[2].name])
         xAxis.labelPosition = .bottom
-        xAxis.labelTextColor = .red
+        xAxis.labelTextColor = .blue
         
     }
     
     func formatLegend(legend: Legend){
-        legend.textColor = .red
+        legend.textColor = .purple
         legend.horizontalAlignment = .right
         legend.verticalAlignment = .top
         legend.drawInside = true
@@ -69,7 +71,7 @@ struct WalletBarChartView: UIViewRepresentable{
 
 struct WalletBarChartView_Previews: PreviewProvider{
     static var previews: some View{
-        WalletBarChartView(entries: Wallet.dataEntriesForWallet(totalBalance: 50, balance: 0, wallets: Wallet.allWallets), selectedWallet: .constant(50))
+        WalletBarChartView(entries: Wallet.dataEntriesForWallet(totalBalance: 50, balance: 0, wallets: Main().allWallets), selectedWallet: .constant(50))
     }
 }
     

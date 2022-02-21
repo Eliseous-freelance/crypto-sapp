@@ -23,7 +23,7 @@ struct ContentView: View {
     func get_wallets_descrp() -> String{
         var w_string: String = ""
         for wallet in wallets{
-            w_string += " \n\(wallet.name) has: £\(wallet.balance)\n "
+            w_string += " \n\(wallet.name) has: £\(wallet.balance)"
         }
         return w_string
     }
@@ -70,10 +70,8 @@ struct ContentView: View {
                                         .rounded))
                 
                 Text(get_wallets_descrp())
-                
-//                Text("\(wallet.name) has: £\(wallet.balance)")
-//                Text("\(wallet.name) has: £\(wallet.balance)")
-                WalletBarChartView(entries: Wallet.dataEntriesForWallet(totalBalance: 50, balance: 0, wallets: Wallet.allWallets), selectedWallet: $selectedBalance)
+        
+                WalletBarChartView(entries: Wallet.dataEntriesForWallet(totalBalance: 50, balance: 0, wallets: Main().allWallets), selectedWallet: $selectedBalance)
                     .frame(height: 100)
                 }
                 .tabItem {
