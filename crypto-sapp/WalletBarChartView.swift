@@ -27,7 +27,7 @@ struct WalletBarChartView: UIViewRepresentable{
         uiView.noDataText = "No Data"
         uiView.data = BarChartData(dataSet: dataSet)
         uiView.rightAxis.enabled = false
-       // uiView.zoom(scaleX: 1.5, scaleY: 1, x: 0, y:0)
+        uiView.zoom(scaleX: 1.5, scaleY: 1, x: 0, y:0)
         uiView.setScaleEnabled(false)
         formatDataSet(dataSet: dataSet)
         formatYAxis(yAxis: uiView.leftAxis)

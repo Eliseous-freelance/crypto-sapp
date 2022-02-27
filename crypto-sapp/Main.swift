@@ -8,8 +8,8 @@
 import SwiftUI
 class Main{
     public var moneyOwned: Double
-    private var moneyMined: Int
-    private var moneyInvested: Int
+    private var moneyMined: Double
+    private var moneyInvested: Double
     
 //
 //    private var values: [Double]
@@ -39,7 +39,7 @@ class Main{
         
         self.miners = Mining(totalBalance: 0, balance: 0, name: "Binance")
         self.investments = Investments(coins: allCoins, initialInvestment: 700)
-        self.homepage = HomePage(moneyOwned: 50, moneyMined: 50, moneyInvested: 50)
+        self.homepage = HomePage(moneyOwned: self.moneyOwned, moneyMined: self.moneyMined, moneyInvested: self.moneyInvested)
         
         self.moneyOwned = get_total_wallets_balance(allWallets: allWallets)
         
